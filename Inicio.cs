@@ -31,7 +31,9 @@ namespace Borrador_tp3
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            if (txtCostoStockOut.Text != "" && txtCostoUnitario.Text != "" && txtReembolso.Text != "")
+            double[,] tablaProbabilidades = GenerarTablaProbabilidades();
+            
+            if (txtCostoStockOut.Text == "" || txtCostoUnitario.Text == "" || txtReembolso.Text == "")
             {
                 MessageBox.Show("Faltan parametros por agregar...");
                 return;
@@ -59,6 +61,29 @@ namespace Borrador_tp3
                     //se envian los parametros a la estrategia 2
                 }
             }
+        }
+
+        private double[,] GenerarTablaProbabilidades()
+        {
+            double[,] matriz = new double[6,2];
+
+            //cantidades vendidas
+            matriz[0,0] = 20;
+            matriz[1,0] = 21;
+            matriz[2,0] = 22;
+            matriz[3,0] = 23;
+            matriz[4,0] = 24;
+            matriz[5,0] = 25;
+
+            //Limite inferior de probabilidades de aparicion
+            matriz[0,1] = 0.0;
+            matriz[1,1] = 0.05;
+            matriz[2,1] = 0.15;
+            matriz[3,1] = 0.3;
+            matriz[4,1] = 0.6;
+            matriz[5,1] = 0.85;
+
+            return matriz;
         }
     }
 }
