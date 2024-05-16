@@ -60,13 +60,13 @@ namespace Borrador_tp3
                 return;
             }
 
+            double costoUnitario = double.Parse(txtCostoUnitario.Text);
+            double costoStockOut = double.Parse(txtCostoStockOut.Text);
+            double reembolso = double.Parse(txtReembolso.Text);
+            double[,] tablaProbabilidades = GenerarTablaProbabilidades();
+
             if (ckE1.Checked)
             {
-                double costoUnitario = double.Parse(txtCostoUnitario.Text);
-                double costoStockOut = double.Parse(txtCostoStockOut.Text);
-                double reembolso = double.Parse(txtReembolso.Text);
-                double[,] tablaProbabilidades = GenerarTablaProbabilidades();
-
                 List<double> diaAnterior = this.diaAnterior;
                 diaAnterior[6] = diaAnterior[3] + diaAnterior[5];
 
@@ -83,18 +83,38 @@ namespace Borrador_tp3
 
                     diaAnterior = diaActual;
                 }
-                
+
+                txtResultadoE1.Text = diaActual[12].ToString();
             }
             
-            if (ckE2.Checked && !ckE1.Checked)
+            if (ckE2.Checked)
             {
                 if (txtCantidadFija.Text == "")
                 {
                     MessageBox.Show("Falta la cantidad fija...");
+                    return;
                 }
                 else
                 {
-                    //se envian los parametros a la estrategia 2
+                    int cantidadFija = int.Parse(txtCantidadFija.Text);
+                    
+                    List<double> diaAnterior = this.diaAnterior;
+                    diaAnterior[6] = cantidadFija;
+
+                    //Se envian los parametros a la estrategia 2
+                    for (int fila = 0; fila < 120; fila++)
+                    {
+                        diaActual = Estrategia2.Montecarlo(costoUnitario, costoStockOut, reembolso,
+                             tablaProbabilidades, diaAnterior, cantidadFija);
+                        for (int col = 0; col < 13; col++)
+                        {
+                            grdTablaMontecarlo.Rows.Add();
+                            grdTablaMontecarlo.Rows[fila + 1].Cells[col].Value = diaActual[col];
+                        }
+
+                        diaAnterior = diaActual;
+                    }
+                    txtResultadoE2.Text = diaActual[12].ToString();
                 }
             }
         }
