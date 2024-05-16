@@ -12,7 +12,7 @@ namespace Borrador_tp3
         //y el pedido del dia siguiente siempre es de 23 unidades
 
         public static List<double> Montecarlo(double costoUnitario, double costoStockOut, double reembolso,
-            double[,] tablaProbabilidades, List<double> diaAnterior, int cantidadFija)
+            double[,] tablaProbabilidades, List<double> diaAnterior, int cantidadFija, double rnd)
         {
             //la lista que devuleve esta funcion debe contener lo siguiente
             /*
@@ -38,8 +38,8 @@ namespace Borrador_tp3
                 diaActual.Add(0);
             }
 
-            Random random = new Random();
-            double rnd = random.NextDouble();
+            //Random random = new Random();
+            //double rnd = random.NextDouble();
 
             //reloj
             diaActual[0] = diaAnterior[0] + 1;

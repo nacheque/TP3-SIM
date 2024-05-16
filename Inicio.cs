@@ -65,6 +65,14 @@ namespace Borrador_tp3
             double reembolso = double.Parse(txtReembolso.Text);
             double[,] tablaProbabilidades = GenerarTablaProbabilidades();
 
+            List<double> randoms = new List<double>();
+            Random random = new Random();
+            for (int i = 0; i < 120; i++)
+            {
+                double rnd = random.NextDouble();
+                randoms.Add(Math.Round(rnd, 4));
+            }
+
             if (ckE1.Checked)
             {
                 List<double> diaAnterior = this.diaAnterior;
@@ -74,7 +82,7 @@ namespace Borrador_tp3
                 for (int fila = 0; fila < 120; fila++)
                 {
                     diaActual = Estrategia1.Montecarlo(costoUnitario, costoStockOut, reembolso,
-                         tablaProbabilidades, diaAnterior);
+                         tablaProbabilidades, diaAnterior, randoms[fila]);
                     for (int col = 0; col < 13; col++)
                     {
                         grdTablaMontecarlo.Rows.Add();
@@ -105,7 +113,7 @@ namespace Borrador_tp3
                     for (int fila = 0; fila < 120; fila++)
                     {
                         diaActual = Estrategia2.Montecarlo(costoUnitario, costoStockOut, reembolso,
-                             tablaProbabilidades, diaAnterior, cantidadFija);
+                             tablaProbabilidades, diaAnterior, cantidadFija, randoms[fila]);
                         for (int col = 0; col < 13; col++)
                         {
                             grdTablaMontecarlo.Rows.Add();

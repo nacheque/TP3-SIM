@@ -14,7 +14,7 @@ namespace Borrador_tp3
         //y calcular el pedido del dia siguiente como la cantidad vendida + stock out
 
         public static List<double> Montecarlo(double costoUnitario, double costoStockOut, double reembolso,
-            double[,] tablaProbabilidades, List<double> diaAnterior)
+            double[,] tablaProbabilidades, List<double> diaAnterior, double rnd)
         {
             //la lista que devuleve esta funcion debe contener lo siguiente
             /*
@@ -40,8 +40,8 @@ namespace Borrador_tp3
                 diaActual.Add(0);
             }
 
-            Random random = new Random();
-            double rnd = random.NextDouble();
+            //Random random = new Random();
+            //double rnd = random.NextDouble();
 
             //reloj
             diaActual[0] = diaAnterior[0] + 1;
