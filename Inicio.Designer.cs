@@ -56,8 +56,8 @@
             this.CostoStockOut = new System.Windows.Forms.Label();
             this.txtCantidadFija = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Estrategia2 = new System.Windows.Forms.Label();
-            this.Estrategia1 = new System.Windows.Forms.Label();
+            this.labele2 = new System.Windows.Forms.Label();
+            this.labelE1 = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.Label();
             this.ckE2 = new System.Windows.Forms.CheckBox();
             this.ckE1 = new System.Windows.Forms.CheckBox();
@@ -66,6 +66,7 @@
             this.Reembolso = new System.Windows.Forms.Label();
             this.Subtitulo = new System.Windows.Forms.Label();
             this.btnInicio = new System.Windows.Forms.Button();
+            this.btnLimpiarTabla = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdTablaMontecarlo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,7 +155,7 @@
             this.grdTablaMontecarlo.Location = new System.Drawing.Point(15, 283);
             this.grdTablaMontecarlo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdTablaMontecarlo.Name = "grdTablaMontecarlo";
-            this.grdTablaMontecarlo.Size = new System.Drawing.Size(1317, 221);
+            this.grdTablaMontecarlo.Size = new System.Drawing.Size(1317, 455);
             this.grdTablaMontecarlo.TabIndex = 40;
             // 
             // Dias
@@ -305,27 +306,27 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Ingrese cantidad fija diaria";
             // 
-            // Estrategia2
+            // labele2
             // 
-            this.Estrategia2.AutoSize = true;
-            this.Estrategia2.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Estrategia2.Location = new System.Drawing.Point(15, 123);
-            this.Estrategia2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.Estrategia2.Name = "Estrategia2";
-            this.Estrategia2.Size = new System.Drawing.Size(139, 27);
-            this.Estrategia2.TabIndex = 31;
-            this.Estrategia2.Text = "Estrategia 2";
+            this.labele2.AutoSize = true;
+            this.labele2.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labele2.Location = new System.Drawing.Point(15, 123);
+            this.labele2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labele2.Name = "labele2";
+            this.labele2.Size = new System.Drawing.Size(139, 27);
+            this.labele2.TabIndex = 31;
+            this.labele2.Text = "Estrategia 2";
             // 
-            // Estrategia1
+            // labelE1
             // 
-            this.Estrategia1.AutoSize = true;
-            this.Estrategia1.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Estrategia1.Location = new System.Drawing.Point(15, 81);
-            this.Estrategia1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.Estrategia1.Name = "Estrategia1";
-            this.Estrategia1.Size = new System.Drawing.Size(139, 27);
-            this.Estrategia1.TabIndex = 30;
-            this.Estrategia1.Text = "Estrategia 1";
+            this.labelE1.AutoSize = true;
+            this.labelE1.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelE1.Location = new System.Drawing.Point(15, 81);
+            this.labelE1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labelE1.Name = "labelE1";
+            this.labelE1.Size = new System.Drawing.Size(139, 27);
+            this.labelE1.TabIndex = 30;
+            this.labelE1.Text = "Estrategia 1";
             // 
             // titulo
             // 
@@ -414,11 +415,23 @@
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
+            // btnLimpiarTabla
+            // 
+            this.btnLimpiarTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarTabla.Location = new System.Drawing.Point(1039, 81);
+            this.btnLimpiarTabla.Name = "btnLimpiarTabla";
+            this.btnLimpiarTabla.Size = new System.Drawing.Size(108, 62);
+            this.btnLimpiarTabla.TabIndex = 52;
+            this.btnLimpiarTabla.Text = "LIMPIAR TABLA";
+            this.btnLimpiarTabla.UseVisualStyleBackColor = true;
+            this.btnLimpiarTabla.Click += new System.EventHandler(this.btnLimpiarTabla_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 534);
+            this.ClientSize = new System.Drawing.Size(1341, 749);
+            this.Controls.Add(this.btnLimpiarTabla);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.Subtitulo);
             this.Controls.Add(this.txtReembolso);
@@ -439,8 +452,8 @@
             this.Controls.Add(this.CostoStockOut);
             this.Controls.Add(this.txtCantidadFija);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Estrategia2);
-            this.Controls.Add(this.Estrategia1);
+            this.Controls.Add(this.labele2);
+            this.Controls.Add(this.labelE1);
             this.Controls.Add(this.titulo);
             this.Controls.Add(this.ckE2);
             this.Controls.Add(this.ckE1);
@@ -483,8 +496,8 @@
         private System.Windows.Forms.Label CostoStockOut;
         private System.Windows.Forms.TextBox txtCantidadFija;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Estrategia2;
-        private System.Windows.Forms.Label Estrategia1;
+        private System.Windows.Forms.Label labele2;
+        private System.Windows.Forms.Label labelE1;
         private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.CheckBox ckE2;
         private System.Windows.Forms.CheckBox ckE1;
@@ -493,5 +506,6 @@
         private System.Windows.Forms.Label Reembolso;
         private System.Windows.Forms.Label Subtitulo;
         private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.Button btnLimpiarTabla;
     }
 }
